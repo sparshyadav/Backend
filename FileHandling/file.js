@@ -10,5 +10,15 @@ const filePath = path.join(__dirname, "test.txt");
 // fs.writeFile(filePath, "Hello World", (err)=>(console.log(err)));
 
 //Synchronous
-const result = fs.readFileSync(filePath, "utf-8");
-console.log(result);
+// const result = fs.readFileSync(filePath, "utf-8");
+// console.log(result);
+
+//Asynchronous
+fs.readFile(filePath, "utf-8", (err, result) => {
+    if (err) {
+        console.log("ERROR: ", err);
+    }
+    else {
+        console.log(result);
+    }
+});
