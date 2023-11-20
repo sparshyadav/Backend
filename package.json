@@ -1,7 +1,6 @@
 {
   "name": "backend-development",
   "version": "1.0.0",
-  "description": "",
   "main": "Hello.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/sparshyadav/Backend-/issues"
   },
-  "homepage": "https://github.com/sparshyadav/Backend-#readme"
+  "homepage": "https://github.com/sparshyadav/Backend-#readme",
+  "description": ""
 }
