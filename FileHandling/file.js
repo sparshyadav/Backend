@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const os = require("os");
 
 const filePath = path.join(__dirname, "test.txt");
 
@@ -23,4 +24,8 @@ const filePath = path.join(__dirname, "test.txt");
 //     }
 // });
 
-fs.appendFileSync(filePath, " Welcome to New York");
+// fs.appendFileSync(filePath, " Welcome to New York");
+
+console.log(os.cpus().length); //Tells the Number of Cores that we have i.e. the maximum number of threads we can have in the thread pool.
+
+
