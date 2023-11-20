@@ -1,10 +1,14 @@
-const fs=require('fs');
-const path=require('path');
+const fs = require('fs');
+const path = require('path');
 
-const filePath=path.join(__dirname, "test.txt");
+const filePath = path.join(__dirname, "test.txt");
 
-//Syncronous 
-fs.writeFileSync(filePath, 'Hey There');
+// Synchronous 
+// fs.writeFileSync(filePath, 'Hey There');
 
-//Asyncronous
-fs.writeFile(filePath, "Hello World", (err)=>(console.log(err)));
+//Asynchronous
+// fs.writeFile(filePath, "Hello World", (err)=>(console.log(err)));
+
+//Synchronous
+const result = fs.readFileSync(filePath, "utf-8");
+console.log(result);
