@@ -11,3 +11,5 @@
 1700537602678 : /about?search=sparsh&name=sy New Request Received
 1700537615585 : /about?search=sparsh&name=aditya New Request Received
 1700537623702 : /about?search=sparsh&name=shreya New Request Received
+1700537929559 : /search=javascript New Request Received
+1700538014417 : /search?search_query=javascript New Request Received

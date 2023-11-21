@@ -13,10 +13,13 @@ const myServer = http.createServer((req, res) => {
         switch (myUrl.pathname) {
             case '/': res.end("Homepage")
                 break;
-            case '/about': 
+            case '/about':
                 const qp = myUrl.query.name;
                 res.end(`Hi, ${qp}`);
                 break;
+            case '/search':
+                const search = myUrl.query.search_query;
+                res.end(`Here Are Your Search Results for ${search}`);
             default: res.end("ERROR 404 Page Not Found");
         }
     })
