@@ -2,3 +2,9 @@
 1700535757547: New Request Received
 1700535768306: New Request Received
 1700535768408: New Request Received
+1700536095606 : / New Request Received
+1700536095863 : /favicon.ico New Request Received
+1700536124085 : /about New Request Received
+1700536124244 : /favicon.ico New Request Received
+1700536135591 : /about/console New Request Received
+1700536135696 : /favicon.ico New Request Received
