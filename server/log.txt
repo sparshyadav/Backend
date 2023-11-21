@@ -13,3 +13,5 @@
 1700537623702 : /about?search=sparsh&name=shreya New Request Received
 1700537929559 : /search=javascript New Request Received
 1700538014417 : /search?search_query=javascript New Request Received
+1700542097757 : / : GET New Request Received
+1700542144547 : /about : GET New Request Received
