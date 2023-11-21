@@ -16,5 +16,8 @@
     "url": "https://github.com/sparshyadav/Backend-/issues"
   },
   "homepage": "https://github.com/sparshyadav/Backend-#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
