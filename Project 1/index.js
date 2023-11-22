@@ -35,4 +35,16 @@ app.get("/api/users/:id", (req, res) => {
     return res.json(user);
 });
 
+app.post("/api/users", (req, res)=>{
+    res.json({status: "pending"});
+});
+
+app.patch("/api/users/:id", (req, res)=>{
+
+});
+
+app.delete("/api/users/:id", (req, res)=>{
+    
+})
+
 app.listen(PORT, () => console.log(`Server Started at PORT: ${PORT}`));
