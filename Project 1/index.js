@@ -13,11 +13,11 @@ app.get('/users', (req, res) => {
     const html =
         `
     <ul>
-        ${users.map((user) => `<li>${user.first_name}</li>`).join("")}
-        ${users.map((user) => `<li>${user.last_name}</li>`).join("")}
-        ${users.map((user) => `<li>${user.email}</li>`).join("")}
-        ${users.map((user) => `<li>${user.gender}</li>`).join("")}
-        ${users.map((user) => `<li>${user.job_title}</li>`).join("")}
+        ${users.map((user) => `<li>${user.first_name}</li> 
+        <li>${user.last_name}</li> 
+        <li>${user.email}</li> 
+        <li>${user.gender}</li> 
+        <li>${user.job_title}</li>`).join("")}
     </ul>
     `
     return res.send(html);
