@@ -17,7 +17,8 @@ app.get('/users', (req, res) => {
         <li>${user.last_name}</li> 
         <li>${user.email}</li> 
         <li>${user.gender}</li> 
-        <li>${user.job_title}</li>`).join("")}
+        <li>${user.job_title}</li> 
+        <br> <br>`).join("")}
     </ul>
     `
     return res.send(html);
