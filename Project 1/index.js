@@ -8,6 +8,17 @@ const PORT = 8000;
 //Middleware - Plugin
 app.use(express.urlencoded({ extended: false }));
 
+app.use((req, res, next)=>{
+    // return res.json({msg: "Hello From MiddleWare 1"});
+    console.log("Hello from Middleware 1");
+    next();
+});
+
+app.use((req, res, next)=>{
+    console.log("Hello from Middleware 2");
+    next();
+});
+
 //Routes
 app.get('/', (req, res) => {
     return res.send("Welcome to Home Page");
@@ -48,7 +59,12 @@ app.post("/api/users", (req, res) => {
 });
 
 app.patch("/api/users/:id", (req, res) => {
-    const
+    const id=Number(req.params.id);
+    const idx=users.find((user)=>user.id===id);
+    users[idx]={...users[idx], ...req.body};
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data)=>{
+        return res.json({status: "Success", id: users[idx]})
+    })
 });
 
 app.delete("/api/users/:id", (req, res) => {
