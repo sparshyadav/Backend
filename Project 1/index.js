@@ -11,11 +11,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next)=>{
     // return res.json({msg: "Hello From MiddleWare 1"});
     console.log("Hello from Middleware 1");
+    req.myUserName="Sparsh Yadav";
     next();
 });
 
 app.use((req, res, next)=>{
-    console.log("Hello from Middleware 2");
+    console.log("Hello from Middleware 2", req.myUserName);
     next();
 });
 
@@ -41,6 +42,7 @@ app.get('/users', (req, res) => {
 
 //REST API 
 app.get('/api/users', (req, res) => {
+    console.log("I am in get route", req.myUserName);
     return res.json(users);
 });
 
