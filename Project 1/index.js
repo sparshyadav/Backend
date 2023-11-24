@@ -58,7 +58,7 @@ app.get("/api/users/:id", (req, res) => {
     const id = Number(req.params.id);
     const user = users.find((user) => user.id === id);
     if (!user) {
-        return res.status(404).json("User Not Found");
+        return res.status(404).json("User Not Found"); // 404 Status Code
     }
     return res.json(user);
 });
@@ -66,7 +66,7 @@ app.get("/api/users/:id", (req, res) => {
 app.post("/api/users", (req, res) => {
     const body = req.body;
     if (!body.first_name || body.last_name || body.email || body.gender || body.job_title) {
-        return res.status(400).json({ msg: "Bad Request, Data Missing" });
+        return res.status(400).json({ msg: "Bad Request, Data Missing" }); // 400 Status Code
     }
 
     app.patch("/api/users/:id", (req, res) => {
