@@ -49,6 +49,7 @@ app.get('/users', (req, res) => {
 //REST API 
 app.get('/api/users', (req, res) => {
     console.log("I am in get route", req.myUserName);
+    res.setHeader("myName", "Sparsh Yadav");
     return res.json(users);
 });
 

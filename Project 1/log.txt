@@ -2,3 +2,5 @@
 
 1700659258785: POST: /api/users
 1700659262427: GET: /api/users
+1700842750471: GET: /api/users
+1700842941098: GET: /api/users
