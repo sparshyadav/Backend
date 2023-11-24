@@ -9,6 +9,12 @@ const PORT = 8000;
 app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next)=>{
+    fs.appendFile("log.txt", `\n${Date.now()}: ${req.method}: ${req.path}`, (err, data)=>{
+        next();
+    })
+})
+
+app.use((req, res, next)=>{
     // return res.json({msg: "Hello From MiddleWare 1"});
     console.log("Hello from Middleware 1");
     req.myUserName="Sparsh Yadav";
