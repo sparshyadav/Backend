@@ -62,23 +62,21 @@ app.get("/api/users/:id", (req, res) => {
 
 app.post("/api/users", (req, res) => {
     const body = req.body;
-    users.push({ ...body, id: users.length + 1 });
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-        return res.status(201).json({ status: "Success", id: users.length });
+    if (!body.first_name || body.last_name || body.email || body.gender || body.job_title) {
+        return res.status(400).json({ msg: "Bad Request, Data Missing" });
+    }
+
+    app.patch("/api/users/:id", (req, res) => {
+        const id = Number(req.params.id);
+        const idx = users.find((user) => user.id === id);
+        users[idx] = { ...users[idx], ...req.body };
+        fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+            return res.json({ status: "Success", id: users[idx] })
+        })
     });
-});
 
-app.patch("/api/users/:id", (req, res) => {
-    const id = Number(req.params.id);
-    const idx = users.find((user) => user.id === id);
-    users[idx] = { ...users[idx], ...req.body };
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-        return res.json({ status: "Success", id: users[idx] })
+    app.delete("/api/users/:id", (req, res) => {
+
     })
-});
 
-app.delete("/api/users/:id", (req, res) => {
-
-})
-
-app.listen(PORT, () => console.log(`Server Started at PORT: ${PORT}`));
+    app.listen(PORT, () => console.log(`Server Started at PORT: ${PORT}`));
