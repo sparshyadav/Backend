@@ -8,20 +8,20 @@ const PORT = 8000;
 //Middleware - Plugin
 app.use(express.urlencoded({ extended: false }));
 
-app.use((req, res, next)=>{
-    fs.appendFile("log.txt", `\n${Date.now()}: ${req.method}: ${req.path}`, (err, data)=>{
+app.use((req, res, next) => {
+    fs.appendFile("log.txt", `\n${Date.now()}: ${req.method}: ${req.path}`, (err, data) => {
         next();
     })
 })
 
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
     // return res.json({msg: "Hello From MiddleWare 1"});
     console.log("Hello from Middleware 1");
-    req.myUserName="Sparsh Yadav";
+    req.myUserName = "Sparsh Yadav";
     next();
 });
 
-app.use((req, res, next)=>{
+app.use((req, res, next) => {
     console.log("Hello from Middleware 2", req.myUserName);
     next();
 });
@@ -63,16 +63,16 @@ app.post("/api/users", (req, res) => {
     const body = req.body;
     users.push({ ...body, id: users.length + 1 });
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-        return res.json({ status: "Success", id: users.length});
+        return res.json({ status: "Success", id: users.length });
     });
 });
 
 app.patch("/api/users/:id", (req, res) => {
-    const id=Number(req.params.id);
-    const idx=users.find((user)=>user.id===id);
-    users[idx]={...users[idx], ...req.body};
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data)=>{
-        return res.json({status: "Success", id: users[idx]})
+    const id = Number(req.params.id);
+    const idx = users.find((user) => user.id === id);
+    users[idx] = { ...users[idx], ...req.body };
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+        return res.json({ status: "Success", id: users[idx] })
     })
 });
 
