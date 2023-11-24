@@ -80,6 +80,8 @@ app.post("/api/users", (req, res) => {
 
     app.delete("/api/users/:id", (req, res) => {
 
-    })
+    });
+});
 
-    app.listen(PORT, () => console.log(`Server Started at PORT: ${PORT}`));
+
+app.listen(PORT, () => console.log(`Server Started at PORT: ${PORT}`));
