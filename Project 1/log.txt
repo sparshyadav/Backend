@@ -5,3 +5,4 @@
 1700842750471: GET: /api/users
 1700842941098: GET: /api/users
 1700843030035: GET: /api/users
+1700845692443: POST: /api/users
