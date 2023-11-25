@@ -6,6 +6,12 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = 8000;
 
+// Connecting with MongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/youtube-app-1')
+    .then(() => console.log("MongoDB Connected"))
+    .catch((err) => console.log("Error: ", err));
+
+
 // Schema
 const userSchema = new mongoose.Schema({
     firstName: {
