@@ -1,5 +1,7 @@
 const http = require("http");
+const { gfName, gfName2, gfName3 } = require("./features");
 console.log(http);
+console.log(gfName, gfName2, gfName3);
 
 const server = http.createServer((req, res) => {
     if (req.url === "/about") {
